@@ -31,7 +31,7 @@ function App() {
     const fetchPayments = async () => {
         try {
             const response = await fetch(
-                "http://localhost:5000/api/payments"
+                "https://leevon-payment-tracker-api.vercel.app/api/payments"
             );
 
             const data = await response.json();
@@ -52,7 +52,7 @@ function App() {
     const handleDelete = async (id) => {
         try {
             const response = await fetch(
-                `http://localhost:5000/api/payments/${id}`,
+                `https://leevon-payment-tracker-api.vercel.app/api/payments/${id}`,
                 {
                     method: "DELETE"
                 }
@@ -102,7 +102,7 @@ function App() {
         setMessage("");
 
         try {
-            const response = await fetch("http://localhost:5000/api/login", {
+            const response = await fetch("https://leevon-payment-tracker-api.vercel.app/api/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -353,7 +353,7 @@ function App() {
                                     try {
                                         // Step 1: Verify username and password
                                         const verifyResponse = await fetch(
-                                            "http://localhost:5000/api/verify",
+                                            "https://leevon-payment-tracker-api.vercel.app/api/verify",
                                             {
                                                method: "POST",
                                                headers: {
@@ -378,7 +378,7 @@ function App() {
 
                                         if (editingPaymentId) {
                                             paymentResponse = await fetch(
-                                                `http://localhost:5000/api/payments/${editingPaymentId}`,
+                                                `https://leevon-payment-tracker-api.vercel.app/api/payments/${editingPaymentId}`,
                                                 {
                                                     method: "PUT",
                                                     headers: {
@@ -390,7 +390,7 @@ function App() {
                                         }
                                         else {
                                             paymentResponse = await fetch(
-                                                "http://localhost:5000/api/payments/add",
+                                                "https://leevon-payment-tracker-api.vercel.app/api/payments/add",
                                                 {
                                                     method: "POST",
                                                     headers: {
